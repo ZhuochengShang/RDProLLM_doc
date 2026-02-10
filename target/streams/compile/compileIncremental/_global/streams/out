@@ -1,0 +1,58 @@
+[debug] [zinc] IncrementalCompile -----------
+[debug] IncrementalCompile.incrementalCompile
+[debug] previous = Stamps for: 0 products, 0 sources, 0 libraries
+[debug] current source = Set(${BASE}/src/main/scala/jobs/Job.scala)
+[debug] > initialChanges = InitialChanges(Changes(added = Set(${BASE}/src/main/scala/jobs/Job.scala), removed = Set(), changed = Set(), unmodified = ...),Set(),Set(),API Changes: Set())
+[debug] Full compilation, no sources in previous analysis.
+[debug] all 1 sources are invalidated
+[debug] Initial set of included nodes: 
+[debug] Recompiling all sources: number of invalidated sources > 50.0 percent of all sources
+[debug] compilation cycle 1
+[info] compiling 1 Scala source to /Users/clockorangezoe/Documents/phd_projects/code/geoAI/RDProLLMagent/target/scala-2.12/classes ...
+[debug] Getting org.scala-sbt:compiler-bridge_2.12:1.9.5:compile for Scala 2.12.18
+[info] Non-compiled module 'compiler-bridge_2.12' for Scala 2.12.18. Compiling...
+[debug] Creating plain compiler interface for 2.12.18.
+[debug]   > Arguments: 
+[debug] 	-d
+[debug] 	/var/folders/83/6ly5xs5j5ns3gmwbqgjqd7rw0000gn/T/sbt_b00bb36a
+[debug] 	-nowarn
+[debug] 	-bootclasspath
+[debug] 	/Library/Java/JavaVirtualMachines/jdk-1.8.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk-1.8.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk-1.8.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk-1.8.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk-1.8.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk-1.8.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk-1.8.jdk/Contents/Home/jre/classes:/Users/clockorangezoe/.sbt/boot/scala-2.12.18/lib/scala-library.jar
+[debug] 	-classpath
+[debug] 	/Users/clockorangezoe/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-sbt/compiler-interface/1.9.5/compiler-interface-1.9.5.jar:/Users/clockorangezoe/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-sbt/util-interface/1.9.4/util-interface-1.9.4.jar:/Users/clockorangezoe/Library/Caches/Coursier/v1/https/repo1.maven.org/maven2/org/scala-sbt/compiler-bridge_2.12/1.9.5/compiler-bridge_2.12-1.9.5-sources.jar:/Users/clockorangezoe/.sbt/boot/scala-2.12.18/lib/scala-compiler.jar:/Users/clockorangezoe/.sbt/boot/scala-2.12.18/lib/scala-reflect.jar:/Users/clockorangezoe/.sbt/boot/scala-2.12.18/lib/scala-xml_2.12-2.1.0.jar
+[debug] 	/var/folders/83/6ly5xs5j5ns3gmwbqgjqd7rw0000gn/T/sbt_10114741/scala/ZincCompat.scala
+[debug] 	/var/folders/83/6ly5xs5j5ns3gmwbqgjqd7rw0000gn/T/sbt_10114741/xsbt/API.scala
+[debug] 	/var/folders/83/6ly5xs5j5ns3gmwbqgjqd7rw0000gn/T/sbt_10114741/xsbt/AbstractZincFile.scala
+[debug] 	/var/folders/83/6ly5xs5j5ns3gmwbqgjqd7rw0000gn/T/sbt_10114741/xsbt/Analyzer.scala
+[debug] 	/var/folders/83/6ly5xs5j5ns3gmwbqgjqd7rw0000gn/T/sbt_10114741/xsbt/CallbackGlobal.scala
+[debug] 	/var/folders/83/6ly5xs5j5ns3gmwbqgjqd7rw0000gn/T/sbt_10114741/xsbt/ClassName.scala
+[debug] 	/var/folders/83/6ly5xs5j5ns3gmwbqgjqd7rw0000gn/T/sbt_10114741/xsbt/Compat.scala
+[debug] 	/var/folders/83/6ly5xs5j5ns3gmwbqgjqd7rw0000gn/T/sbt_10114741/xsbt/CompilerBridge.scala
+[debug] 	/var/folders/83/6ly5xs5j5ns3gmwbqgjqd7rw0000gn/T/sbt_10114741/xsbt/ConsoleBridge.scala
+[debug] 	/var/folders/83/6ly5xs5j5ns3gmwbqgjqd7rw0000gn/T/sbt_10114741/xsbt/DelegatingReporter.scala
+[debug] 	/var/folders/83/6ly5xs5j5ns3gmwbqgjqd7rw0000gn/T/sbt_10114741/xsbt/Dependency.scala
+[debug] 	/var/folders/83/6ly5xs5j5ns3gmwbqgjqd7rw0000gn/T/sbt_10114741/xsbt/ExtractAPI.scala
+[debug] 	/var/folders/83/6ly5xs5j5ns3gmwbqgjqd7rw0000gn/T/sbt_10114741/xsbt/ExtractUsedNames.scala
+[debug] 	/var/folders/83/6ly5xs5j5ns3gmwbqgjqd7rw0000gn/T/sbt_10114741/xsbt/GlobalHelpers.scala
+[debug] 	/var/folders/83/6ly5xs5j5ns3gmwbqgjqd7rw0000gn/T/sbt_10114741/xsbt/InteractiveConsoleBridge.scala
+[debug] 	/var/folders/83/6ly5xs5j5ns3gmwbqgjqd7rw0000gn/T/sbt_10114741/xsbt/InteractiveConsoleFactoryBridge.scala
+[debug] 	/var/folders/83/6ly5xs5j5ns3gmwbqgjqd7rw0000gn/T/sbt_10114741/xsbt/InteractiveConsoleHelper.scala
+[debug] 	/var/folders/83/6ly5xs5j5ns3gmwbqgjqd7rw0000gn/T/sbt_10114741/xsbt/InteractiveConsoleResponse.scala
+[debug] 	/var/folders/83/6ly5xs5j5ns3gmwbqgjqd7rw0000gn/T/sbt_10114741/xsbt/JarUtils.scala
+[debug] 	/var/folders/83/6ly5xs5j5ns3gmwbqgjqd7rw0000gn/T/sbt_10114741/xsbt/JavaUtils.scala
+[debug] 	/var/folders/83/6ly5xs5j5ns3gmwbqgjqd7rw0000gn/T/sbt_10114741/xsbt/LocalToNonLocalClass.scala
+[debug] 	/var/folders/83/6ly5xs5j5ns3gmwbqgjqd7rw0000gn/T/sbt_10114741/xsbt/LocateClassFile.scala
+[debug] 	/var/folders/83/6ly5xs5j5ns3gmwbqgjqd7rw0000gn/T/sbt_10114741/xsbt/Log.scala
+[debug] 	/var/folders/83/6ly5xs5j5ns3gmwbqgjqd7rw0000gn/T/sbt_10114741/xsbt/Message.scala
+[debug] 	/var/folders/83/6ly5xs5j5ns3gmwbqgjqd7rw0000gn/T/sbt_10114741/xsbt/PlainNioFile.scala
+[debug] 	/var/folders/83/6ly5xs5j5ns3gmwbqgjqd7rw0000gn/T/sbt_10114741/xsbt/ScaladocBridge.scala
+[debug]       
+[info]   Compilation completed in 5.294s.
+[debug] [zinc] Running cached compiler 1f04f434 for Scala compiler version 2.12.18
+[debug] [zinc] The Scala compiler is invoked with:
+[debug] 	-bootclasspath
+[debug] 	/Library/Java/JavaVirtualMachines/jdk-1.8.jdk/Contents/Home/jre/lib/resources.jar:/Library/Java/JavaVirtualMachines/jdk-1.8.jdk/Contents/Home/jre/lib/rt.jar:/Library/Java/JavaVirtualMachines/jdk-1.8.jdk/Contents/Home/jre/lib/jsse.jar:/Library/Java/JavaVirtualMachines/jdk-1.8.jdk/Contents/Home/jre/lib/jce.jar:/Library/Java/JavaVirtualMachines/jdk-1.8.jdk/Contents/Home/jre/lib/charsets.jar:/Library/Java/JavaVirtualMachines/jdk-1.8.jdk/Contents/Home/jre/lib/jfr.jar:/Library/Java/JavaVirtualMachines/jdk-1.8.jdk/Contents/Home/jre/classes:/Users/clockorangezoe/.sbt/boot/scala-2.12.18/lib/scala-library.jar
+[debug] 	-classpath
+[debug] 	/Users/clockorangezoe/Documents/phd_projects/code/geoAI/RDProLLMagent/target/scala-2.12/classes
+[debug] Compilation failed (CompilerInterface)
+[error] (Compile / compileIncremental) Compilation failed

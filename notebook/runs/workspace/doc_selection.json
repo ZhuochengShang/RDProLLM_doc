@@ -1,0 +1,58 @@
+[
+  {
+    "id": "c0000",
+    "heading": "Setup"
+  },
+  {
+    "id": "c0007",
+    "heading": "RDPro Data Abstraction"
+  },
+  {
+    "id": "c0008",
+    "heading": "Raster data Loading"
+  },
+  {
+    "id": "c0009",
+    "heading": "Raster data Creation"
+  },
+  {
+    "id": "c0011",
+    "heading": "Pixel-level operations / MapPixels"
+  },
+  {
+    "id": "c0012",
+    "heading": "Pixel-level operations / FilterPixels"
+  },
+  {
+    "id": "c0013",
+    "heading": "Pixel-level operations / Flatten"
+  },
+  {
+    "id": "c0014",
+    "heading": "Pixel-level operations / Overlay"
+  },
+  {
+    "id": "c0016",
+    "heading": "Reshape Operations / Retile"
+  },
+  {
+    "id": "c0017",
+    "heading": "Reshape Operations / Explode"
+  },
+  {
+    "id": "c0019",
+    "heading": "Reshape Operations / Rescale"
+  },
+  {
+    "id": "c0020",
+    "heading": "Reshape Operations / Reshape"
+  },
+  {
+    "id": "c0021",
+    "heading": "Raptor join operation"
+  },
+  {
+    "id": "c0022",
+    "heading": "Raster writing"
+  }
+]

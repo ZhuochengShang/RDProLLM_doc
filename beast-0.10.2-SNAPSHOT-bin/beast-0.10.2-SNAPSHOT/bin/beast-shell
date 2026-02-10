@@ -1,0 +1,32 @@
+#!/bin/bash
+
+# Usage:
+# beast-shell: Starts Spark shell with Beast classes
+# beast-shell --jar <custom jar>: Starts Spark shell with Beast classes and the given JAR file
+# beast-shell --conf1 value1 --conf2 value2 ... :
+#                 Starts Spark shell with Beast classes and pass additional spark-shell configuration
+
+source "$(dirname "$0")/common-beast.sh"
+
+# Get the directory where the script resides
+startup_script="$(dirname "$0")/beast-startup.scala"
+
+if [ ! -f "$startup_script" ]; then
+  echo "Creating startup script at $startup_script"
+  cat <<EOL > "$startup_script"
+println(
+  """
+    |                 ___   ___       ___ ___
+    |  Empowered by:   __) |__   /\  /__   |
+    |                 |__) |___ /__\ ___/  |    version 0.10.2-SNAPSHOT
+    |  Visit https://bitbucket.org/bdlabucr/beast/src/master/doc for more details
+    |""")
+import edu.ucr.cs.bdlab.beast._
+org.apache.spark.beast.CRSServer.startServer(sc)
+org.apache.spark.beast.SparkSQLRegistration.registerUDT
+org.apache.spark.beast.SparkSQLRegistration.registerUDF(spark)
+EOL
+fi
+
+# Execute spark-shell
+eval spark-shell -I "$startup_script" "${spark_args}"

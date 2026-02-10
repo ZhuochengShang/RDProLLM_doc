@@ -1,0 +1,14 @@
+{
+  "00_dataloading": [
+    "scala",
+    "python"
+  ],
+  "02_mappixels": [
+    "scala",
+    "python"
+  ],
+  "03_overlay": [
+    "scala",
+    "python"
+  ]
+}

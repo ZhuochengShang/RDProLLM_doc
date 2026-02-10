@@ -1,0 +1,25 @@
+[error] /Users/clockorangezoe/Documents/phd_projects/code/geoAI/RDProLLMagent/src/main/scala/jobs/Job.scala:3:8: not found: object edu
+[error] import edu.ucr.cs.bdlab.beast._
+[error]        ^
+[error] /Users/clockorangezoe/Documents/phd_projects/code/geoAI/RDProLLMagent/src/main/scala/jobs/Job.scala:4:8: not found: object edu
+[error] import edu.ucr.cs.bdlab.raptor.GeoTiffWriter
+[error]        ^
+[error] /Users/clockorangezoe/Documents/phd_projects/code/geoAI/RDProLLMagent/src/main/scala/jobs/Job.scala:5:8: not found: object edu
+[error] import edu.ucr.cs.bdlab.beast.io.tiff.TiffConstants
+[error]        ^
+[error] /Users/clockorangezoe/Documents/phd_projects/code/geoAI/RDProLLMagent/src/main/scala/jobs/Job.scala:12:19: object apache is not a member of package org
+[error]   def run(sc: org.apache.spark.SparkContext): Unit = {
+[error]                   ^
+[error] /Users/clockorangezoe/Documents/phd_projects/code/geoAI/RDProLLMagent/src/main/scala/jobs/Job.scala:13:14: not found: type RasterRDD
+[error]     val red: RasterRDD[Float] = sc.geoTiff[Float](B4_PATH)
+[error]              ^
+[error] /Users/clockorangezoe/Documents/phd_projects/code/geoAI/RDProLLMagent/src/main/scala/jobs/Job.scala:14:14: not found: type RasterRDD
+[error]     val nir: RasterRDD[Float] = sc.geoTiff[Float](B5_PATH)
+[error]              ^
+[error] /Users/clockorangezoe/Documents/phd_projects/code/geoAI/RDProLLMagent/src/main/scala/jobs/Job.scala:16:18: not found: type RasterRDD
+[error]     val stacked: RasterRDD[Array[Float]] = red.overlay(nir)
+[error]                  ^
+[error] /Users/clockorangezoe/Documents/phd_projects/code/geoAI/RDProLLMagent/src/main/scala/jobs/Job.scala:17:15: not found: type RasterRDD
+[error]     val ndvi: RasterRDD[Float] = stacked.mapPixels((px: Array[Float]) => {
+[error]               ^
+[error] 8 errors found

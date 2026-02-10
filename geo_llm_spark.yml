@@ -1,0 +1,27 @@
+name: geo_llm_spark
+channels:
+  - conda-forge
+dependencies:
+  - python=3.10
+  - pip
+
+  # Geo stack
+  - gdal=3.8
+  - rasterio
+  - pandas
+  - geopandas
+  - pyproj
+  - shapely
+  - fiona
+  - numpy
+
+  # PySpark (no scala package on osx-arm64 conda)
+  - pyspark=3.3.1
+
+  - requests
+  - python-dotenv
+  - ipykernel
+
+  - pip:
+      - openai
+      - google-genai

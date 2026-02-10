@@ -1,0 +1,9 @@
+[
+  "../doc/docs/common/datamodel.md",
+  "../doc/docs/common/setup.md",
+  "../doc/docs/data/dataloading.md",
+  "../doc/docs/common/rastermetadata.md",
+  "../doc/docs/process/overlay.md",
+  "../doc/docs/process/mappixels.md",
+  "../doc/docs/data/rasterwriting.md"
+]

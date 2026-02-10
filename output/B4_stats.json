@@ -1,0 +1,33 @@
+{
+  "path": "/Users/clockorangezoe/Documents/phd_projects/code/geoAI/RDProLLMagent/data/landsat8/LA/B4/LC08_L2SP_040037_20250827_20250903_02_T1_SR_B4.TIF",
+  "size": [
+    7681,
+    7821
+  ],
+  "bands": 1,
+  "projection": "PROJCS[\"WGS 84 / UTM zone 11N\",GEOGCS[\"WGS 84\",DATUM[\"WGS_1984\",SPHEROID[\"WGS 84\",6378137,298.257223563,AUTHORITY[\"EPSG\",\"7030\"]],AUTHORITY[\"EPSG\",\"6326\"]],PRIMEM[\"Greenwich\",0,AUTHORITY[\"EPSG\",\"8901\"]],UNIT[\"degree\",0.0174532925199433,AUTHORITY[\"EPSG\",\"9122\"]],AUTHORITY[\"EPSG\",\"4326\"]],PROJECTION[\"Transverse_Mercator\"],PARAMETER[\"latitude_of_origin\",0],PARAMETER[\"central_meridian\",-117],PARAMETER[\"scale_factor\",0.9996],PARAMETER[\"false_easting\",500000],PARAMETER[\"false_northing\",0],UNIT[\"metre\",1,AUTHORITY[\"EPSG\",\"9001\"]],AXIS[\"Easting\",EAST],AXIS[\"Northing\",NORTH],AUTHORITY[\"EPSG\",\"32611\"]]",
+  "geotransform": [
+    370785.0,
+    30.0,
+    0.0,
+    3787815.0,
+    0.0,
+    -30.0
+  ],
+  "driver": "GTiff",
+  "band_stats": [
+    {
+      "band": 1,
+      "nodata": 0.0,
+      "min": 6107.0,
+      "max": 43060.0,
+      "mean": 10774.892336121,
+      "std": 3696.0085711857,
+      "dtype": "UInt16",
+      "block_size": [
+        256,
+        256
+      ]
+    }
+  ]
+}

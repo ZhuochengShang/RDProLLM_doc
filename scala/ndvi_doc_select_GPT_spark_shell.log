@@ -1,0 +1,230 @@
+:: loading settings :: url = jar:file:/Users/clockorangezoe/Documents/EnvUtilities/spark-3.3.1-bin-hadoop3/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+26/01/27 21:49:29 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Spark context Web UI available at http://192.168.68.61:4040
+Spark context available as 'sc' (master = local[*], app id = local-1769579372966).
+Spark session available as 'spark'.
+runs/ndvi_eval/ndvi_doc_select_GPT.scala:77: error: too many arguments (3) for method saveAsGeoTiff: (path: String, opts: edu.ucr.cs.bdlab.beast.common.BeastOptions)Unit
+      GeoTiffWriter.WriteMode -> "compatibility"
+                              ^
+Welcome to
+      ____              __
+     / __/__  ___ _____/ /__
+    _\ \/ _ \/ _ `/ __/  '_/
+   /___/ .__/\_,_/_/ /_/\_\   version 3.3.1
+      /_/
+         
+Using Scala version 2.12.15 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_381)
+Type in expressions to have them evaluated.
+Type :help for more information.
+
+scala> :quit
+
+
+--- STDERR ---
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/Users/clockorangezoe/Documents/EnvUtilities/spark-3.3.1-bin-hadoop3/jars/log4j-slf4j-impl-2.17.2.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/Users/clockorangezoe/Documents/EnvUtilities/hadoop-3.2.3/share/hadoop/common/lib/slf4j-log4j12-1.7.25.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+https://repo.osgeo.org/repository/geotools-releases/ added as a remote repository with the name: repo-1
+https://repo.osgeo.org/repository/release/ added as a remote repository with the name: repo-2
+Ivy Default Cache set to: /Users/clockorangezoe/Documents/phd_projects/code/geoAI/RDProLLMagent/notebook/runs/ndvi_eval/.ivy2/cache
+The jars for the packages stored in: /Users/clockorangezoe/Documents/phd_projects/code/geoAI/RDProLLMagent/notebook/runs/ndvi_eval/.ivy2/jars
+org.locationtech.jts#jts-core added as a dependency
+org.geotools#gt-referencing added as a dependency
+org.geotools#gt-epsg-hsql added as a dependency
+org.geotools#gt-geotiff added as a dependency
+org.geotools#gt-coverage added as a dependency
+it.geosolutions.imageio-ext#imageio-ext-tiff added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-8bfdd271-f71b-4ec1-812b-58e8d9160eb2;1.0
+	confs: [default]
+	found org.locationtech.jts#jts-core;1.19.0 in local-m2-cache
+	found org.geotools#gt-referencing;24.1 in repo-1
+	found org.ejml#ejml-ddense;0.34 in local-m2-cache
+	found org.ejml#ejml-core;0.34 in local-m2-cache
+	found commons-pool#commons-pool;1.5.4 in local-m2-cache
+	found org.geotools#gt-metadata;24.1 in repo-1
+	found org.geotools#gt-opengis;24.1 in repo-1
+	found systems.uom#systems-common;2.0.1 in central
+	found javax.measure#unit-api;2.0 in local-m2-cache
+	found tech.units#indriya;2.0.2 in local-m2-cache
+	found tech.uom.lib#uom-lib-common;2.0 in local-m2-cache
+	found javax.inject#javax.inject;1 in local-m2-cache
+	found si.uom#si-quantity;2.0.1 in local-m2-cache
+	found si.uom#si-units;2.0.1 in local-m2-cache
+	found jakarta.annotation#jakarta.annotation-api;1.3.4 in local-m2-cache
+	found javax.media#jai_core;1.1.3 in local-m2-cache
+	found org.apache.commons#commons-lang3;3.8.1 in local-m2-cache
+	found org.geotools.ogc#net.opengis.ows;24.1 in repo-1
+	found org.geotools.ogc#org.w3.xlink;24.1 in repo-1
+	found org.eclipse.emf#org.eclipse.emf.common;2.15.0 in local-m2-cache
+	found org.eclipse.emf#org.eclipse.emf.ecore;2.15.0 in local-m2-cache
+	found org.eclipse.emf#org.eclipse.emf.ecore.xmi;2.15.0 in local-m2-cache
+	found it.geosolutions.jgridshift#jgridshift-core;1.3 in local-m2-cache
+	found net.sf.geographiclib#GeographicLib-Java;1.49 in local-m2-cache
+	found org.geotools#gt-epsg-hsql;24.1 in repo-1
+	found org.hsqldb#hsqldb;2.4.1 in local-m2-cache
+	found org.geotools#gt-geotiff;24.1 in repo-1
+	found org.geotools#gt-main;24.1 in repo-1
+	found org.apache.commons#commons-text;1.6 in local-m2-cache
+	found com.fasterxml.jackson.core#jackson-core;2.10.1 in central
+	found org.geotools#gt-coverage;24.1 in repo-1
+	found javax.media#jai_imageio;1.1 in local-m2-cache
+	found org.jaitools#jt-zonalstats;1.6.0 in local-m2-cache
+	found org.jaitools#jt-utils;1.6.0 in local-m2-cache
+	found it.geosolutions.jaiext.affine#jt-affine;1.1.17 in repo-2
+	found it.geosolutions.jaiext.iterators#jt-iterators;1.1.17 in repo-2
+	found javax.media#jai_codec;1.1.3 in local-m2-cache
+	found it.geosolutions.jaiext.utilities#jt-utilities;1.1.17 in repo-2
+	found it.geosolutions.jaiext.scale#jt-scale;1.1.17 in repo-2
+	found it.geosolutions.jaiext.vectorbin#jt-vectorbin;1.1.17 in repo-2
+	found it.geosolutions.jaiext.translate#jt-translate;1.1.17 in repo-2
+	found it.geosolutions.jaiext.algebra#jt-algebra;1.1.17 in repo-2
+	found it.geosolutions.jaiext.bandmerge#jt-bandmerge;1.1.17 in repo-2
+	found it.geosolutions.jaiext.bandselect#jt-bandselect;1.1.17 in repo-2
+	found it.geosolutions.jaiext.bandcombine#jt-bandcombine;1.1.17 in repo-2
+	found it.geosolutions.jaiext.border#jt-border;1.1.17 in repo-2
+	found it.geosolutions.jaiext.buffer#jt-buffer;1.1.17 in repo-2
+	found it.geosolutions.jaiext.crop#jt-crop;1.1.17 in repo-2
+	found it.geosolutions.jaiext.mosaic#jt-mosaic;1.1.17 in repo-2
+	found it.geosolutions.jaiext.lookup#jt-lookup;1.1.17 in repo-2
+	found it.geosolutions.jaiext.nullop#jt-nullop;1.1.17 in repo-2
+	found it.geosolutions.jaiext.rescale#jt-rescale;1.1.17 in repo-2
+	found it.geosolutions.jaiext.scale2#jt-scale2;1.1.17 in repo-2
+	found org.huldra.math#bigint;0.7.1 in local-m2-cache
+	found it.geosolutions.jaiext.stats#jt-stats;1.1.17 in repo-2
+	found com.google.guava#guava;25.1-jre in central
+	found com.google.code.findbugs#jsr305;3.0.2 in local-m2-cache
+	found org.checkerframework#checker-qual;2.0.0 in central
+	found com.google.errorprone#error_prone_annotations;2.1.3 in central
+	found com.google.j2objc#j2objc-annotations;1.1 in local-m2-cache
+	found org.codehaus.mojo#animal-sniffer-annotations;1.14 in central
+	found it.geosolutions.jaiext.warp#jt-warp;1.1.17 in repo-2
+	found it.geosolutions.jaiext.zonal#jt-zonal;1.1.17 in repo-2
+	found it.geosolutions.jaiext.binarize#jt-binarize;1.1.17 in repo-2
+	found it.geosolutions.jaiext.format#jt-format;1.1.17 in repo-2
+	found it.geosolutions.jaiext.colorconvert#jt-colorconvert;1.1.17 in repo-2
+	found it.geosolutions.jaiext.errordiffusion#jt-errordiffusion;1.1.17 in repo-2
+	found it.geosolutions.jaiext.orderdither#jt-orderdither;1.1.17 in repo-2
+	found it.geosolutions.jaiext.colorindexer#jt-colorindexer;1.1.17 in repo-2
+	found it.geosolutions.jaiext.imagefunction#jt-imagefunction;1.1.17 in repo-2
+	found it.geosolutions.jaiext.piecewise#jt-piecewise;1.1.17 in repo-2
+	found it.geosolutions.jaiext.classifier#jt-classifier;1.1.17 in repo-2
+	found it.geosolutions.jaiext.rlookup#jt-rlookup;1.1.17 in repo-2
+	found it.geosolutions.jaiext.shadedrelief#jt-shadedrelief;1.1.17 in repo-2
+	found commons-io#commons-io;2.6 in local-m2-cache
+	found it.geosolutions.imageio-ext#imageio-ext-tiff;1.4.14 in repo-2
+	found it.geosolutions.imageio-ext#imageio-ext-utilities;1.4.14 in repo-2
+	found it.geosolutions.imageio-ext#imageio-ext-geocore;1.4.14 in repo-2
+	found it.geosolutions.imageio-ext#imageio-ext-streams;1.4.14 in repo-2
+	found javax.xml.bind#jaxb-api;2.4.0-b180830.0359 in local-m2-cache
+	found javax.activation#javax.activation-api;1.2.0 in local-m2-cache
+	found org.glassfish.jaxb#jaxb-runtime;2.4.0-b180830.0438 in local-m2-cache
+	found org.glassfish.jaxb#txw2;2.4.0-b180830.0438 in local-m2-cache
+	found com.sun.istack#istack-commons-runtime;3.0.7 in local-m2-cache
+	found org.jvnet.staxex#stax-ex;1.8 in local-m2-cache
+	found com.sun.xml.fastinfoset#FastInfoset;1.2.15 in local-m2-cache
+	found io.airlift#aircompressor;0.27 in local-m2-cache
+:: resolution report :: resolve 679ms :: artifacts dl 15ms
+	:: modules in use:
+	com.fasterxml.jackson.core#jackson-core;2.10.1 from central in [default]
+	com.google.code.findbugs#jsr305;3.0.2 from local-m2-cache in [default]
+	com.google.errorprone#error_prone_annotations;2.1.3 from central in [default]
+	com.google.guava#guava;25.1-jre from central in [default]
+	com.google.j2objc#j2objc-annotations;1.1 from local-m2-cache in [default]
+	com.sun.istack#istack-commons-runtime;3.0.7 from local-m2-cache in [default]
+	com.sun.xml.fastinfoset#FastInfoset;1.2.15 from local-m2-cache in [default]
+	commons-io#commons-io;2.6 from local-m2-cache in [default]
+	commons-pool#commons-pool;1.5.4 from local-m2-cache in [default]
+	io.airlift#aircompressor;0.27 from local-m2-cache in [default]
+	it.geosolutions.imageio-ext#imageio-ext-geocore;1.4.14 from repo-2 in [default]
+	it.geosolutions.imageio-ext#imageio-ext-streams;1.4.14 from repo-2 in [default]
+	it.geosolutions.imageio-ext#imageio-ext-tiff;1.4.14 from repo-2 in [default]
+	it.geosolutions.imageio-ext#imageio-ext-utilities;1.4.14 from repo-2 in [default]
+	it.geosolutions.jaiext.affine#jt-affine;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.algebra#jt-algebra;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.bandcombine#jt-bandcombine;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.bandmerge#jt-bandmerge;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.bandselect#jt-bandselect;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.binarize#jt-binarize;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.border#jt-border;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.buffer#jt-buffer;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.classifier#jt-classifier;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.colorconvert#jt-colorconvert;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.colorindexer#jt-colorindexer;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.crop#jt-crop;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.errordiffusion#jt-errordiffusion;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.format#jt-format;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.imagefunction#jt-imagefunction;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.iterators#jt-iterators;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.lookup#jt-lookup;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.mosaic#jt-mosaic;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.nullop#jt-nullop;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.orderdither#jt-orderdither;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.piecewise#jt-piecewise;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.rescale#jt-rescale;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.rlookup#jt-rlookup;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.scale#jt-scale;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.scale2#jt-scale2;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.shadedrelief#jt-shadedrelief;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.stats#jt-stats;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.translate#jt-translate;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.utilities#jt-utilities;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.vectorbin#jt-vectorbin;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.warp#jt-warp;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.zonal#jt-zonal;1.1.17 from repo-2 in [default]
+	it.geosolutions.jgridshift#jgridshift-core;1.3 from local-m2-cache in [default]
+	jakarta.annotation#jakarta.annotation-api;1.3.4 from local-m2-cache in [default]
+	javax.activation#javax.activation-api;1.2.0 from local-m2-cache in [default]
+	javax.inject#javax.inject;1 from local-m2-cache in [default]
+	javax.measure#unit-api;2.0 from local-m2-cache in [default]
+	javax.media#jai_codec;1.1.3 from local-m2-cache in [default]
+	javax.media#jai_core;1.1.3 from local-m2-cache in [default]
+	javax.media#jai_imageio;1.1 from local-m2-cache in [default]
+	javax.xml.bind#jaxb-api;2.4.0-b180830.0359 from local-m2-cache in [default]
+	net.sf.geographiclib#GeographicLib-Java;1.49 from local-m2-cache in [default]
+	org.apache.commons#commons-lang3;3.8.1 from local-m2-cache in [default]
+	org.apache.commons#commons-text;1.6 from local-m2-cache in [default]
+	org.checkerframework#checker-qual;2.0.0 from central in [default]
+	org.codehaus.mojo#animal-sniffer-annotations;1.14 from central in [default]
+	org.eclipse.emf#org.eclipse.emf.common;2.15.0 from local-m2-cache in [default]
+	org.eclipse.emf#org.eclipse.emf.ecore;2.15.0 from local-m2-cache in [default]
+	org.eclipse.emf#org.eclipse.emf.ecore.xmi;2.15.0 from local-m2-cache in [default]
+	org.ejml#ejml-core;0.34 from local-m2-cache in [default]
+	org.ejml#ejml-ddense;0.34 from local-m2-cache in [default]
+	org.geotools#gt-coverage;24.1 from repo-1 in [default]
+	org.geotools#gt-epsg-hsql;24.1 from repo-1 in [default]
+	org.geotools#gt-geotiff;24.1 from repo-1 in [default]
+	org.geotools#gt-main;24.1 from repo-1 in [default]
+	org.geotools#gt-metadata;24.1 from repo-1 in [default]
+	org.geotools#gt-opengis;24.1 from repo-1 in [default]
+	org.geotools#gt-referencing;24.1 from repo-1 in [default]
+	org.geotools.ogc#net.opengis.ows;24.1 from repo-1 in [default]
+	org.geotools.ogc#org.w3.xlink;24.1 from repo-1 in [default]
+	org.glassfish.jaxb#jaxb-runtime;2.4.0-b180830.0438 from local-m2-cache in [default]
+	org.glassfish.jaxb#txw2;2.4.0-b180830.0438 from local-m2-cache in [default]
+	org.hsqldb#hsqldb;2.4.1 from local-m2-cache in [default]
+	org.huldra.math#bigint;0.7.1 from local-m2-cache in [default]
+	org.jaitools#jt-utils;1.6.0 from local-m2-cache in [default]
+	org.jaitools#jt-zonalstats;1.6.0 from local-m2-cache in [default]
+	org.jvnet.staxex#stax-ex;1.8 from local-m2-cache in [default]
+	org.locationtech.jts#jts-core;1.19.0 from local-m2-cache in [default]
+	si.uom#si-quantity;2.0.1 from local-m2-cache in [default]
+	si.uom#si-units;2.0.1 from local-m2-cache in [default]
+	systems.uom#systems-common;2.0.1 from central in [default]
+	tech.units#indriya;2.0.2 from local-m2-cache in [default]
+	tech.uom.lib#uom-lib-common;2.0 from local-m2-cache in [default]
+	:: evicted modules:
+	org.locationtech.jts#jts-core;1.17.1 by [org.locationtech.jts#jts-core;1.19.0] in [default]
+	it.geosolutions.imageio-ext#imageio-ext-tiff;1.3.2 by [it.geosolutions.imageio-ext#imageio-ext-tiff;1.4.14] in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   89  |   0   |   0   |   2   ||   87  |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-8bfdd271-f71b-4ec1-812b-58e8d9160eb2
+	confs: [default]
+	0 artifacts copied, 87 already retrieved (0kB/15ms)
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).

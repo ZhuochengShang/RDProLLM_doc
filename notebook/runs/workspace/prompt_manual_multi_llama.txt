@@ -1,0 +1,281 @@
+RDPro documentation (relevant DOC CHUNKS only):
+### DOC CHUNK c0000: Raster Data and Data Model Definitions
+## Raster Data and Data Model Definitions
+
+
+### DOC CHUNK c0001: Raster Data and Data Model Definitions / Grid space
+### Grid space
+A grid space is defined as a two dimensional grid that consists of W columns and H rows with the
+origin (0, 0) at the top-left corner.
+Coordinates: Represented as (i,j) where i is the column and j is the row.
+Origin: Always (0, 0) at the top-left corner.
+Independence: The grid position does not depend on geography; it only cares about the image dimensions (W x H).
+
+
+### DOC CHUNK c0002: Raster Data and Data Model Definitions / Raster tile
+### Raster tile
+The grid is broken down into tiles where each tile consists of tw columns and th rows, with the exception of the tiles at the last column
+and/or the last row.
+Each tile is associated with tile ID.
+
+
+### DOC CHUNK c0003: Raster Data and Data Model Definitions / World space
+### World space
+he world space represents a rectangular space on the Earth’s surface defined by four geographical coordinates (𝑥1,𝑦1) and (𝑥2,𝑦2) that define the space [𝑥1, 𝑥2 [×[𝑦1,𝑦2 [.
+
+
+### DOC CHUNK c0004: Raster Data and Data Model Definitions / Grid to World
+### Grid to World
+G2W is a 2D affine transformation that transforms a point from the grid space to the
+world space.
+
+
+### DOC CHUNK c0005: Raster Data and Data Model Definitions / World to Grid
+### World to Grid
+W2D is a 2D affine transformation that transforms a point from the world space to the grid space.
+
+
+### DOC CHUNK c0006: RDPro Data Abstraction
+## RDPro Data Abstraction
+ITile[T]: The atomic unit of processing in RDPro
+```scala
+@tparam T the type of measurement values in tiles
+@param tileID the ID of this tile in the raster metadata
+@param rasterMetadata the metadata of the underlying raster
+@param rasterFeature (optional) any additional features that are associated with the raster layer, e.g., file name and time
+```
+
+RasterRDD[T]: An alias for RDD[ITile[T]]. It represents a distributed collection of raster tiles.
+
+
+### DOC CHUNK c0000: Setup
+## Setup
+- Follow the [setup page](dev-setup.md) to prepare your project for using Beast.
+- If you use Scala, add the following line in your code to import all Beast features.
+```scala
+import edu.ucr.cs.bdlab.beast._
+```
+
+
+### DOC CHUNK c0000: Raster data Loading
+## Raster data Loading
+The first step for processing any dataset in Spark is loading it as an RDD.
+RDPro currently supports both GeoTIFF and HDF as input files.
+The following is an example of loading raster data in Beast.
+Notice that the input can be either a single file or a directory with many files.
+In both cases, the input will be loaded in a single RDD.
+
+```scala
+// Load GeoTiff file
+val raster: RDD[ITile[Int]] = sc.geoTiff("glc2000_v1_1.tif")
+// Or using the RasterRDD alias
+val raster: RasterRDD[Int] = sc.geoTiff("glc2000_v1_1.tif")
+// Load HDF file
+val temperatureK: RasterRDD[Float] = sc.hdfFile("MOD11A1.A2022173.h08v05.006.2022174092443.hdf", "LST_Day_1km")
+```
+
+*Note*: You can download this file at [this link](https://forobs.jrc.ec.europa.eu/products/glc2000/products.php).
+
+The type parameter `[Int]` indicates that each pixel in the GeoTIFF file contains a single integer value.
+This must match the actual contents of the file to work correctly. If you are not sure what type the file contains,
+the following code example could help you figure it out.
+
+```scala
+val raster = sc.geoTiff("glc2000_v1_1.tif")
+println(raster.first.pixelType)
+```
+
+In this case, it will print
+```
+IntegerType
+```
+The possibilities are:
+
+| Type                        | Loading statement          |
+|-----------------------------|----------------------------|
+| IntegerType                 | `sc.geoTiff[Int]`          |
+| FloatType                   | `sc.geoTiff[Float]`        |
+| ArrayType(IntegerType,true) | `sc.geoTiff[Array[Int]]`   |
+| ArrayType(FloatType, true)  | `sc.geoTiff[Array[Float]]` |
+
+
+### DOC CHUNK c0000: DOC
+RasterMetadata: A class that holds metadata of a raster layer
+```scala
+ @param x1 The index of the lowest column in the raster file (inclusive)
+ @param y1 The index of the lowest row in the raster file (inclusive)
+ @param x2 The index of the highest column in the raster file (exclusive)
+ @param y2 The highest index of a row in the raster layer (exclusive)
+ @param tileWidth The width of each tile in pixels
+ @param tileHeight The height of each tile in pixels
+ @param srid The spatial reference identifier of the coordinate reference system of this raster layer
+ @param g2m The grid to model affine transformation
+```
+
+
+### DOC CHUNK c0000: Overlay
+### Overlay
+THe overlay operation stacks multiple rasters on top of each other. This function only works if all the input
+rasters have the same metadata, i.e., same resolution, CRS, and tile size. If the two inputs have mixed
+metadata, they should be first converted using the reshape operation (see below) to make them compatible.
+```scala
+@param inputs the RDDs to overlay
+@return a raster with the same metadata of the inputs where output pixels are the concatenation of input pixels.
+def overlay[T: ClassTag, V](@varargs inputs: RDD[ITile[T]]*): RasterRDD[Array[V]]
+```
+
+```scala
+val raster1: RasterRDD[Int] = sc.geoTiff[Int]("glc2000_v1_1.tif")
+val raster2: RasterRDD[Int] = sc.geoTiff[Int]("vegetation")
+val stacked: RasterRDD[Array[Int]] = raster1.overlay(raster2)
+```
+
+
+### DOC CHUNK c0000: MapPixels
+### MapPixels
+This operation applies a mathematical function to each pixel to produce an output raster with the same dimensions
+of the input. For example, the following code converts a raster that contains temperature values in Kelvin
+to Fahrenheit.
+```scala
+@param inputRaster the input raster RDD
+@param f the function to apply on each input pixel value to produce the output pixel value
+@tparam T the type of pixels in the input
+@tparam U the type of pixels in the output
+@return the resulting RDD
+def mapPixels[T: ClassTag, U: ClassTag](inputRaster: RasterRDD[T], f: T => U): RasterRDD[U]
+```
+
+```scala
+val temperatureK: RasterRDD[Float] =
+  sc.hdfFile("MOD11A1.A2022173.h08v05.006.2022174092443.hdf", "LST_Day_1km")
+val temperatureF: RasterRDD[Float] = temperatureK.mapPixels(k => (k-273.15f) * 9 / 5 + 32)
+temperatureF.saveAsGeoTiff("temperature_f")
+```
+Note: The file can be downloaded from the
+[LP DAAC archive website](https://e4ftl01.cr.usgs.gov/MOLT/MOD11A1.006/2022.06.22/MOD11A1.A2022173.h08v05.006.2022174092443.hdf)
+but you will need to be logged in to download the file.
+
+
+### DOC CHUNK c0000: Raster writing
+## Raster writing
+Any raster RDD can be written as raster files, e.g., GeoTIFF.
+The following example reads an HDF file, applies some processing, and write the output as GeoTIFF.
+```scala
+val temperatureK: RasterRDD[Float] =
+  sc.hdfFile("MOD11A1.A2022173.h08v05.006.2022174092443.hdf", "LST_Day_1km")
+val temperatureF: RasterRDD[Float] = temperatureK.mapPixels(k => (k-273.15f) * 9 / 5 + 32)
+temperatureF.saveAsGeoTiff("temperature_f")
+```
+
+Below are some additional options you can use when writing files.
+
+- Compression: You can choose between three types of compression {LZW, Deflate, and None} as follows.
+```scala
+raster.saveAsGeoTiff("temperature_f", GeoTiffWriter.Compression -> TiffConstants.COMPRESSION_LZW)
+raster.saveAsGeoTiff("temperature_f", GeoTiffWriter.Compression -> TiffConstants.COMPRESSION_DEFLATE)
+raster.saveAsGeoTiff("temperature_f", GeoTiffWriter.Compression -> TiffConstants.COMPRESSION_NONE)
+```
+- Write mode: A raster RDD can be written in distributed or compatibility mode.
+In distributed mode, each RDD partition is written to a separate file.
+These files can be read back and processes by Beast but traditional GIS software might not be able to process it.
+If you use compatibility mode, the entire raster RDD is written as a single file that is compatible with
+traditional GIS software.
+```scala
+raster.saveAsGeoTiff("temperature_f", GeoTiffWriter.WriteMode -> "distributed")
+raster.saveAsGeoTiff("temperature_f", GeoTiffWriter.WriteMode -> "compatibility")
+```
+Hint: If you expect a large number of files to be written, e.g., after applying the explode method,
+the distributed writing mode is recommended for more efficiency.
+- Bit compaction: In GeoTIFF, values can be bit-compacted to use as few bits as possible.
+To do that, Beast will need to first scan all the data to determine the maximum value
+and use it to calculate the minimal bit representation of values. The following example uses this feature.
+```scala
+raster.saveAsGeoTiff("temperature_f", GeoTiffWriter.CompactBits -> true)
+```
+This feature works only with integer pixel values. Float values are always represented in 32-bits.
+- BitsPerSample: If you want to use the bit compaction feature without the overhead
+of scanning the entire dataset to find the maximum, you can directly set the
+number of bits per sample (band) in the raster data. Note that Beast will use these values
+without checking their validity so you must be sure that the values are correct.
+If unsure, let Beast find out or disable the bit compaction feature.
+In the following example, we assume that we write a file with three bands, RGB,
+each taking 8 bits.
+```scala
+raster.saveAsGeoTiff("temperature_f", GeoTiffWriter.BitsPerSample -> "8,8,8")
+```
+
+
+Python script:
+from osgeo import gdal
+import numpy as np
+from pathlib import Path
+
+B4_PATH = "/Users/clockorangezoe/Documents/phd_projects/code/geoAI/RDProLLMagent/data/landsat8/LA/B4/LC08_L2SP_040037_20250827_20250903_02_T1_SR_B4.TIF"   # Red
+B5_PATH = "/Users/clockorangezoe/Documents/phd_projects/code/geoAI/RDProLLMagent/data/landsat8/LA/B5/LC08_L2SP_040037_20250827_20250903_02_T1_SR_B5.TIF"   # NIR
+OUT_NDVI = "/Users/clockorangezoe/Documents/phd_projects/code/geoAI/RDProLLMagent/python/ndvi.py"
+
+# Open datasets
+ds_red = gdal.Open(B4_PATH, gdal.GA_ReadOnly)
+ds_nir = gdal.Open(B5_PATH, gdal.GA_ReadOnly)
+
+assert ds_red and ds_nir, "Failed to open input files"
+
+# Read arrays
+red = ds_red.GetRasterBand(1).ReadAsArray().astype(np.float32)
+nir = ds_nir.GetRasterBand(1).ReadAsArray().astype(np.float32)
+
+# Check grid alignment
+if (
+    ds_red.GetGeoTransform() != ds_nir.GetGeoTransform()
+    or ds_red.GetProjection() != ds_nir.GetProjection()
+):
+    raise RuntimeError("B4 and B5 grids do not match — warp one band first")
+
+# Handle NoData
+red_nodata = ds_red.GetRasterBand(1).GetNoDataValue()
+nir_nodata = ds_nir.GetRasterBand(1).GetNoDataValue()
+
+mask = np.zeros(red.shape, dtype=bool)
+if red_nodata is not None:
+    mask |= (red == red_nodata)
+if nir_nodata is not None:
+    mask |= (nir == nir_nodata)
+
+# NDVI calculation
+denom = nir + red
+ndvi = np.where(
+    (denom == 0) | mask,
+    -9999.0,
+    (nir - red) / denom
+).astype(np.float32)
+
+# Create output GeoTIFF
+driver = gdal.GetDriverByName("GTiff")
+out_ds = driver.Create(
+    OUT_NDVI,
+    ds_red.RasterXSize,
+    ds_red.RasterYSize,
+    1,
+    gdal.GDT_Float32,
+    options=["TILED=YES", "COMPRESS=LZW"]
+)
+
+out_ds.SetGeoTransform(ds_red.GetGeoTransform())
+out_ds.SetProjection(ds_red.GetProjection())
+
+out_band = out_ds.GetRasterBand(1)
+out_band.WriteArray(ndvi)
+out_band.SetNoDataValue(-9999.0)
+out_band.FlushCache()
+
+# Cleanup
+ds_red = None
+ds_nir = None
+out_ds = None
+
+print("NDVI written to:", OUT_NDVI)
+
+
+Task:
+Translate the Python script into Scala targeting RDPro on Spark.
+Use ONLY APIs described in the DOC CHUNKS.

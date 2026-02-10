@@ -1,0 +1,36 @@
+#!/bin/bash
+# beast.sh
+
+# Usage:
+# beast - Runs Beast main which lists the available commands
+# beast <command> <arguments> - Runs the given standard command with arguments
+# beast --jar <custom jar> <command> <arguments> - Runs either a standard command or a custom command defined
+#        in the given JAR
+# beast --class <main class> --jar <custom jar> <arguments> - Runs a user-provided main class from the given JAR
+#        file with the given arguments
+# beast --conf value <command> <arguments> - Runs the given standard Beast command and pass additional configuration
+#        to spark-submit command, e.g., master, packages, jars, ... etc.
+
+source "$(dirname "$0")/common-beast.sh"
+declare -a all_args=(spark-submit $spark_args)
+
+if [[ -n "$program" && "$program" == *.jar && -f "$program" ]]; then
+  all_args+=("$program")
+else
+  beast_spark_jar=($lib_dir/beast-spark-*.jar)
+  # Check if we found any matching JAR files
+  if [[ -n "${beast_spark_jar[0]}" && -f "${beast_spark_jar[0]}" ]]; then
+    all_args+=("${beast_spark_jar[0]}" "$program")
+  else
+    echo "No matching 'beast-spark-*.jar' file found in $lib_dir."
+    exit 1
+  fi
+fi
+
+# Loop through each remaining command-line argument
+for arg in "$@"; do
+  # Append the argument to the string
+  all_args+=("$arg")
+done
+
+"${all_args[@]}"
