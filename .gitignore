@@ -1,0 +1,24 @@
+# --- Big data / rasters ---
+data/
+*.tif
+*.tiff
+*.TIF
+*.aux.xml
+
+# --- Spark / Hadoop outputs ---
+output/
+workspace/
+*.crc
+
+# --- Build + caches ---
+target/
+.ivy2/
+.metals/
+.bsp/
+.idea/
+.DS_Store
+
+# --- Binaries / jars ---
+#*.jar
+#beast-*-bin/
+
