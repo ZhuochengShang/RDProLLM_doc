@@ -22,3 +22,6 @@ target/
 #*.jar
 #beast-*-bin/
 
+# --- Run time ---
+notebook/runs/
+
