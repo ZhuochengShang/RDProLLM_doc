@@ -108,3 +108,7 @@ object ComputeNDVI {
 //   - If Spark runs in local mode (sc.master starts with "local") and the path is an absolute local path, it is converted to a file:/// URI via java.nio.file.Paths.
 //   - If Spark is not local and the path has no scheme, it is left unchanged to resolve against the cluster filesystem (fs.defaultFS).
 // - Alignment: overlay enforces matching metadata; if rasters are not aligned, a RuntimeException is thrown advising to warp one band first.
+
+val _r = ComputeNDVI.run(sc)
+println("__DONE__ object=ComputeNDVI")
+System.exit(0)
