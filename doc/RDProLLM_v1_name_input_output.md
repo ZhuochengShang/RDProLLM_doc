@@ -13,6 +13,42 @@ RDPro (Raster Distributed Processor) is Beast's component for distributed raster
 import edu.ucr.cs.bdlab.beast._
 ```
 
+## Required Imports (Scala)
+
+```scala
+import org.apache.spark.sql.SparkSession
+import org.apache.spark.SparkConf
+import edu.ucr.cs.bdlab.beast._
+import edu.ucr.cs.bdlab.beast.cg.SpatialDataTypes.RasterRDD
+import edu.ucr.cs.bdlab.beast.common.BeastOptions
+import edu.ucr.cs.bdlab.beast.geolite.{ITile, RasterFeature, RasterMetadata}
+import edu.ucr.cs.bdlab.beast.io.tiff.TiffConstants
+import edu.ucr.cs.bdlab.raptor.{GeoTiffWriter, RasterOperationsFocal, RasterOperationsLocal, RasterOperationsGlobal}
+import edu.ucr.cs.bdlab.raptor.RaptorMixin._
+import edu.ucr.cs.bdlab.raptor.RaptorMixin.RasterReadMixinFunctions
+```
+
+### Why these imports
+
+- `SparkSession`, `SparkConf`: Spark app/session setup.
+- `edu.ucr.cs.bdlab.beast._`: core RDPro/Beast raster APIs.
+- `RasterRDD`: explicit raster RDD type alias import.
+- `BeastOptions`: options container for reader/writer and operation configs.
+- `ITile`, `RasterFeature`, `RasterMetadata`: explicit raster core data structures.
+- `TiffConstants`: GeoTIFF compression constants.
+- `GeoTiffWriter`: write options (`Compression`, `WriteMode`, `CompactBits`, `BitsPerSample`).
+- `RasterOperationsFocal`: advanced reshape/warp operations.
+- `RasterOperationsLocal`: pixel/tile-local operations.
+- `RasterOperationsGlobal`: whole-raster/global operations.
+- `RaptorMixin._`: extension methods for raster operations.
+- `RasterReadMixinFunctions`: explicit read mixin import for raster loading helpers.
+
+## Operation Families
+
+- `RasterOperationsLocal`: local operations that act on each pixel/tile independently (for example `mapPixels`, `filterPixels`).
+- `RasterOperationsFocal`: focal/reshape/reprojection operations that depend on spatial neighborhood or target grid (for example `reshapeNN`, `reshapeAverage`, `reproject`, `rescale`).
+- `RasterOperationsGlobal`: global operations/aggregations computed over the full raster.
+
 ## Raster Data Model
 
 ### Grid space (pixel coordinates)
