@@ -1,0 +1,453 @@
+SLF4J: Class path contains multiple SLF4J bindings.
+SLF4J: Found binding in [jar:file:/Users/clockorangezoe/Documents/EnvUtilities/spark-3.3.1-bin-hadoop3/jars/log4j-slf4j-impl-2.17.2.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: Found binding in [jar:file:/Users/clockorangezoe/Documents/EnvUtilities/hadoop-3.2.3/share/hadoop/common/lib/slf4j-log4j12-1.7.25.jar!/org/slf4j/impl/StaticLoggerBinder.class]
+SLF4J: See http://www.slf4j.org/codes.html#multiple_bindings for an explanation.
+SLF4J: Actual binding is of type [org.apache.logging.slf4j.Log4jLoggerFactory]
+26/02/10 23:29:59 WARN Utils: Your hostname, Clockoranges-MacBook-Air.local resolves to a loopback address: 127.0.0.1; using 192.168.68.60 instead (on interface en0)
+26/02/10 23:29:59 WARN Utils: Set SPARK_LOCAL_IP if you need to bind to another address
+https://repo.osgeo.org/repository/geotools-releases/ added as a remote repository with the name: repo-1
+https://repo.osgeo.org/repository/release/ added as a remote repository with the name: repo-2
+:: loading settings :: url = jar:file:/Users/clockorangezoe/Documents/EnvUtilities/spark-3.3.1-bin-hadoop3/jars/ivy-2.5.0.jar!/org/apache/ivy/core/settings/ivysettings.xml
+Ivy Default Cache set to: /Users/clockorangezoe/Documents/phd_projects/code/geoAI/RDProLLM_doc/notebook/runs/ndvi_eval/.ivy2/cache
+The jars for the packages stored in: /Users/clockorangezoe/Documents/phd_projects/code/geoAI/RDProLLM_doc/notebook/runs/ndvi_eval/.ivy2/jars
+org.locationtech.jts#jts-core added as a dependency
+org.geotools#gt-referencing added as a dependency
+org.geotools#gt-epsg-hsql added as a dependency
+org.geotools#gt-geotiff added as a dependency
+org.geotools#gt-coverage added as a dependency
+it.geosolutions.imageio-ext#imageio-ext-tiff added as a dependency
+:: resolving dependencies :: org.apache.spark#spark-submit-parent-afea8d1a-ba02-4b45-9b48-db114ee7db41;1.0
+	confs: [default]
+	found org.locationtech.jts#jts-core;1.19.0 in local-m2-cache
+	found org.geotools#gt-referencing;24.1 in repo-1
+	found org.ejml#ejml-ddense;0.34 in local-m2-cache
+	found org.ejml#ejml-core;0.34 in local-m2-cache
+	found commons-pool#commons-pool;1.5.4 in local-m2-cache
+	found org.geotools#gt-metadata;24.1 in repo-1
+	found org.geotools#gt-opengis;24.1 in repo-1
+	found systems.uom#systems-common;2.0.1 in central
+	found javax.measure#unit-api;2.0 in local-m2-cache
+	found tech.units#indriya;2.0.2 in local-m2-cache
+	found tech.uom.lib#uom-lib-common;2.0 in local-m2-cache
+	found javax.inject#javax.inject;1 in local-m2-cache
+	found si.uom#si-quantity;2.0.1 in local-m2-cache
+	found si.uom#si-units;2.0.1 in local-m2-cache
+	found jakarta.annotation#jakarta.annotation-api;1.3.4 in local-m2-cache
+	found javax.media#jai_core;1.1.3 in local-m2-cache
+	found org.apache.commons#commons-lang3;3.8.1 in local-m2-cache
+	found org.geotools.ogc#net.opengis.ows;24.1 in repo-1
+	found org.geotools.ogc#org.w3.xlink;24.1 in repo-1
+	found org.eclipse.emf#org.eclipse.emf.common;2.15.0 in local-m2-cache
+	found org.eclipse.emf#org.eclipse.emf.ecore;2.15.0 in local-m2-cache
+	found org.eclipse.emf#org.eclipse.emf.ecore.xmi;2.15.0 in local-m2-cache
+	found it.geosolutions.jgridshift#jgridshift-core;1.3 in local-m2-cache
+	found net.sf.geographiclib#GeographicLib-Java;1.49 in local-m2-cache
+	found org.geotools#gt-epsg-hsql;24.1 in repo-1
+	found org.hsqldb#hsqldb;2.4.1 in local-m2-cache
+	found org.geotools#gt-geotiff;24.1 in repo-1
+	found org.geotools#gt-main;24.1 in repo-1
+	found org.apache.commons#commons-text;1.6 in local-m2-cache
+	found com.fasterxml.jackson.core#jackson-core;2.10.1 in central
+	found org.geotools#gt-coverage;24.1 in repo-1
+	found javax.media#jai_imageio;1.1 in local-m2-cache
+	found org.jaitools#jt-zonalstats;1.6.0 in local-m2-cache
+	found org.jaitools#jt-utils;1.6.0 in local-m2-cache
+	found it.geosolutions.jaiext.affine#jt-affine;1.1.17 in repo-2
+	found it.geosolutions.jaiext.iterators#jt-iterators;1.1.17 in repo-2
+	found javax.media#jai_codec;1.1.3 in local-m2-cache
+	found it.geosolutions.jaiext.utilities#jt-utilities;1.1.17 in repo-2
+	found it.geosolutions.jaiext.scale#jt-scale;1.1.17 in repo-2
+	found it.geosolutions.jaiext.vectorbin#jt-vectorbin;1.1.17 in repo-2
+	found it.geosolutions.jaiext.translate#jt-translate;1.1.17 in repo-2
+	found it.geosolutions.jaiext.algebra#jt-algebra;1.1.17 in repo-2
+	found it.geosolutions.jaiext.bandmerge#jt-bandmerge;1.1.17 in repo-2
+	found it.geosolutions.jaiext.bandselect#jt-bandselect;1.1.17 in repo-2
+	found it.geosolutions.jaiext.bandcombine#jt-bandcombine;1.1.17 in repo-2
+	found it.geosolutions.jaiext.border#jt-border;1.1.17 in repo-2
+	found it.geosolutions.jaiext.buffer#jt-buffer;1.1.17 in repo-2
+	found it.geosolutions.jaiext.crop#jt-crop;1.1.17 in repo-2
+	found it.geosolutions.jaiext.mosaic#jt-mosaic;1.1.17 in repo-2
+	found it.geosolutions.jaiext.lookup#jt-lookup;1.1.17 in repo-2
+	found it.geosolutions.jaiext.nullop#jt-nullop;1.1.17 in repo-2
+	found it.geosolutions.jaiext.rescale#jt-rescale;1.1.17 in repo-2
+	found it.geosolutions.jaiext.scale2#jt-scale2;1.1.17 in repo-2
+	found org.huldra.math#bigint;0.7.1 in local-m2-cache
+	found it.geosolutions.jaiext.stats#jt-stats;1.1.17 in repo-2
+	found com.google.guava#guava;25.1-jre in central
+	found com.google.code.findbugs#jsr305;3.0.2 in local-m2-cache
+	found org.checkerframework#checker-qual;2.0.0 in central
+	found com.google.errorprone#error_prone_annotations;2.1.3 in central
+	found com.google.j2objc#j2objc-annotations;1.1 in local-m2-cache
+	found org.codehaus.mojo#animal-sniffer-annotations;1.14 in central
+	found it.geosolutions.jaiext.warp#jt-warp;1.1.17 in repo-2
+	found it.geosolutions.jaiext.zonal#jt-zonal;1.1.17 in repo-2
+	found it.geosolutions.jaiext.binarize#jt-binarize;1.1.17 in repo-2
+	found it.geosolutions.jaiext.format#jt-format;1.1.17 in repo-2
+	found it.geosolutions.jaiext.colorconvert#jt-colorconvert;1.1.17 in repo-2
+	found it.geosolutions.jaiext.errordiffusion#jt-errordiffusion;1.1.17 in repo-2
+	found it.geosolutions.jaiext.orderdither#jt-orderdither;1.1.17 in repo-2
+	found it.geosolutions.jaiext.colorindexer#jt-colorindexer;1.1.17 in repo-2
+	found it.geosolutions.jaiext.imagefunction#jt-imagefunction;1.1.17 in repo-2
+	found it.geosolutions.jaiext.piecewise#jt-piecewise;1.1.17 in repo-2
+	found it.geosolutions.jaiext.classifier#jt-classifier;1.1.17 in repo-2
+	found it.geosolutions.jaiext.rlookup#jt-rlookup;1.1.17 in repo-2
+	found it.geosolutions.jaiext.shadedrelief#jt-shadedrelief;1.1.17 in repo-2
+	found commons-io#commons-io;2.6 in local-m2-cache
+	found it.geosolutions.imageio-ext#imageio-ext-tiff;1.4.14 in repo-2
+	found it.geosolutions.imageio-ext#imageio-ext-utilities;1.4.14 in repo-2
+	found it.geosolutions.imageio-ext#imageio-ext-geocore;1.4.14 in repo-2
+	found it.geosolutions.imageio-ext#imageio-ext-streams;1.4.14 in repo-2
+	found javax.xml.bind#jaxb-api;2.4.0-b180830.0359 in local-m2-cache
+	found javax.activation#javax.activation-api;1.2.0 in local-m2-cache
+	found org.glassfish.jaxb#jaxb-runtime;2.4.0-b180830.0438 in local-m2-cache
+	found org.glassfish.jaxb#txw2;2.4.0-b180830.0438 in local-m2-cache
+	found com.sun.istack#istack-commons-runtime;3.0.7 in local-m2-cache
+	found org.jvnet.staxex#stax-ex;1.8 in local-m2-cache
+	found com.sun.xml.fastinfoset#FastInfoset;1.2.15 in local-m2-cache
+	found io.airlift#aircompressor;0.27 in local-m2-cache
+:: resolution report :: resolve 770ms :: artifacts dl 18ms
+	:: modules in use:
+	com.fasterxml.jackson.core#jackson-core;2.10.1 from central in [default]
+	com.google.code.findbugs#jsr305;3.0.2 from local-m2-cache in [default]
+	com.google.errorprone#error_prone_annotations;2.1.3 from central in [default]
+	com.google.guava#guava;25.1-jre from central in [default]
+	com.google.j2objc#j2objc-annotations;1.1 from local-m2-cache in [default]
+	com.sun.istack#istack-commons-runtime;3.0.7 from local-m2-cache in [default]
+	com.sun.xml.fastinfoset#FastInfoset;1.2.15 from local-m2-cache in [default]
+	commons-io#commons-io;2.6 from local-m2-cache in [default]
+	commons-pool#commons-pool;1.5.4 from local-m2-cache in [default]
+	io.airlift#aircompressor;0.27 from local-m2-cache in [default]
+	it.geosolutions.imageio-ext#imageio-ext-geocore;1.4.14 from repo-2 in [default]
+	it.geosolutions.imageio-ext#imageio-ext-streams;1.4.14 from repo-2 in [default]
+	it.geosolutions.imageio-ext#imageio-ext-tiff;1.4.14 from repo-2 in [default]
+	it.geosolutions.imageio-ext#imageio-ext-utilities;1.4.14 from repo-2 in [default]
+	it.geosolutions.jaiext.affine#jt-affine;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.algebra#jt-algebra;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.bandcombine#jt-bandcombine;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.bandmerge#jt-bandmerge;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.bandselect#jt-bandselect;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.binarize#jt-binarize;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.border#jt-border;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.buffer#jt-buffer;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.classifier#jt-classifier;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.colorconvert#jt-colorconvert;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.colorindexer#jt-colorindexer;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.crop#jt-crop;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.errordiffusion#jt-errordiffusion;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.format#jt-format;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.imagefunction#jt-imagefunction;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.iterators#jt-iterators;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.lookup#jt-lookup;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.mosaic#jt-mosaic;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.nullop#jt-nullop;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.orderdither#jt-orderdither;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.piecewise#jt-piecewise;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.rescale#jt-rescale;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.rlookup#jt-rlookup;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.scale#jt-scale;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.scale2#jt-scale2;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.shadedrelief#jt-shadedrelief;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.stats#jt-stats;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.translate#jt-translate;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.utilities#jt-utilities;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.vectorbin#jt-vectorbin;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.warp#jt-warp;1.1.17 from repo-2 in [default]
+	it.geosolutions.jaiext.zonal#jt-zonal;1.1.17 from repo-2 in [default]
+	it.geosolutions.jgridshift#jgridshift-core;1.3 from local-m2-cache in [default]
+	jakarta.annotation#jakarta.annotation-api;1.3.4 from local-m2-cache in [default]
+	javax.activation#javax.activation-api;1.2.0 from local-m2-cache in [default]
+	javax.inject#javax.inject;1 from local-m2-cache in [default]
+	javax.measure#unit-api;2.0 from local-m2-cache in [default]
+	javax.media#jai_codec;1.1.3 from local-m2-cache in [default]
+	javax.media#jai_core;1.1.3 from local-m2-cache in [default]
+	javax.media#jai_imageio;1.1 from local-m2-cache in [default]
+	javax.xml.bind#jaxb-api;2.4.0-b180830.0359 from local-m2-cache in [default]
+	net.sf.geographiclib#GeographicLib-Java;1.49 from local-m2-cache in [default]
+	org.apache.commons#commons-lang3;3.8.1 from local-m2-cache in [default]
+	org.apache.commons#commons-text;1.6 from local-m2-cache in [default]
+	org.checkerframework#checker-qual;2.0.0 from central in [default]
+	org.codehaus.mojo#animal-sniffer-annotations;1.14 from central in [default]
+	org.eclipse.emf#org.eclipse.emf.common;2.15.0 from local-m2-cache in [default]
+	org.eclipse.emf#org.eclipse.emf.ecore;2.15.0 from local-m2-cache in [default]
+	org.eclipse.emf#org.eclipse.emf.ecore.xmi;2.15.0 from local-m2-cache in [default]
+	org.ejml#ejml-core;0.34 from local-m2-cache in [default]
+	org.ejml#ejml-ddense;0.34 from local-m2-cache in [default]
+	org.geotools#gt-coverage;24.1 from repo-1 in [default]
+	org.geotools#gt-epsg-hsql;24.1 from repo-1 in [default]
+	org.geotools#gt-geotiff;24.1 from repo-1 in [default]
+	org.geotools#gt-main;24.1 from repo-1 in [default]
+	org.geotools#gt-metadata;24.1 from repo-1 in [default]
+	org.geotools#gt-opengis;24.1 from repo-1 in [default]
+	org.geotools#gt-referencing;24.1 from repo-1 in [default]
+	org.geotools.ogc#net.opengis.ows;24.1 from repo-1 in [default]
+	org.geotools.ogc#org.w3.xlink;24.1 from repo-1 in [default]
+	org.glassfish.jaxb#jaxb-runtime;2.4.0-b180830.0438 from local-m2-cache in [default]
+	org.glassfish.jaxb#txw2;2.4.0-b180830.0438 from local-m2-cache in [default]
+	org.hsqldb#hsqldb;2.4.1 from local-m2-cache in [default]
+	org.huldra.math#bigint;0.7.1 from local-m2-cache in [default]
+	org.jaitools#jt-utils;1.6.0 from local-m2-cache in [default]
+	org.jaitools#jt-zonalstats;1.6.0 from local-m2-cache in [default]
+	org.jvnet.staxex#stax-ex;1.8 from local-m2-cache in [default]
+	org.locationtech.jts#jts-core;1.19.0 from local-m2-cache in [default]
+	si.uom#si-quantity;2.0.1 from local-m2-cache in [default]
+	si.uom#si-units;2.0.1 from local-m2-cache in [default]
+	systems.uom#systems-common;2.0.1 from central in [default]
+	tech.units#indriya;2.0.2 from local-m2-cache in [default]
+	tech.uom.lib#uom-lib-common;2.0 from local-m2-cache in [default]
+	:: evicted modules:
+	org.locationtech.jts#jts-core;1.17.1 by [org.locationtech.jts#jts-core;1.19.0] in [default]
+	it.geosolutions.imageio-ext#imageio-ext-tiff;1.3.2 by [it.geosolutions.imageio-ext#imageio-ext-tiff;1.4.14] in [default]
+	---------------------------------------------------------------------
+	|                  |            modules            ||   artifacts   |
+	|       conf       | number| search|dwnlded|evicted|| number|dwnlded|
+	---------------------------------------------------------------------
+	|      default     |   89  |   0   |   0   |   2   ||   87  |   0   |
+	---------------------------------------------------------------------
+:: retrieving :: org.apache.spark#spark-submit-parent-afea8d1a-ba02-4b45-9b48-db114ee7db41
+	confs: [default]
+	0 artifacts copied, 87 already retrieved (0kB/15ms)
+26/02/10 23:30:00 WARN NativeCodeLoader: Unable to load native-hadoop library for your platform... using builtin-java classes where applicable
+Setting default log level to "WARN".
+To adjust logging level use sc.setLogLevel(newLevel). For SparkR, use setLogLevel(newLevel).
+Spark context Web UI available at http://192.168.68.60:4040
+Spark context available as 'sc' (master = local[*], app id = local-1770795003927).
+Spark session available as 'spark'.
+Welcome to
+      ____              __
+     / __/__  ___ _____/ /__
+    _\ \/ _ \/ _ `/ __/  '_/
+   /___/ .__/\_,_/_/ /_/\_\   version 3.3.1
+      /_/
+         
+Using Scala version 2.12.15 (Java HotSpot(TM) 64-Bit Server VM, Java 1.8.0_381)
+Type in expressions to have them evaluated.
+Type :help for more information.
+
+scala> import edu.ucr.cs.bdlab.beast._
+import edu.ucr.cs.bdlab.beast._
+
+scala> import edu.ucr.cs.bdlab.raptor.GeoTiffWriter
+import edu.ucr.cs.bdlab.raptor.GeoTiffWriter
+
+scala> import edu.ucr.cs.bdlab.beast.io.tiff.TiffConstants
+import edu.ucr.cs.bdlab.beast.io.tiff.TiffConstants
+
+scala> import org.apache.spark.SparkContext
+import org.apache.spark.SparkContext
+
+scala> import org.apache.hadoop.fs.{FileSystem, Path}
+import org.apache.hadoop.fs.{FileSystem, Path}
+
+scala> import org.apache.spark.sql.types.{ArrayType, FloatType, IntegerType}
+import org.apache.spark.sql.types.{ArrayType, FloatType, IntegerType}
+
+scala> import java.net.URI
+import java.net.URI
+
+scala> import java.nio.file.Paths
+import java.nio.file.Paths
+
+scala> 
+
+scala> object NDVI_Single {
+     |   def run(sc: SparkContext): Unit = {
+     |     // Defaults from the provided Python script
+     |     val defaultRed = "/Users/clockorangezoe/Documents/phd_projects/code/g 
+eoAI/RDProLLM_doc/data/landsat8/LA/B4/LC08_L2SP_040037_20250827_20250903_02_T1_S 
+R_B4.TIF"
+     |     val defaultNir = "/Users/clockorangezoe/Documents/phd_projects/code/g 
+eoAI/RDProLLM_doc/data/landsat8/LA/B5/LC08_L2SP_040037_20250827_20250903_02_T1_S 
+R_B5.TIF"
+     |     val defaultOut = "/Users/clockorangezoe/Documents/phd_projects/code/g 
+eoAI/RDProLLM_doc/output/ndvi_single.v2.tif"
+     | 
+     |     // Read "args" from SparkConf/System properties if provided; otherwis 
+e use defaults
+     |     val argsStrOpt =
+     |       sc.getConf.getOption("rdpro.args")
+     |         .orElse(sys.props.get("rdpro.args"))
+     |         .orElse(sys.env.get("RDPRO_ARGS"))
+     | 
+     |     val cliArgs: Array[String] = argsStrOpt.map(_.split("\\s+").filter(_. 
+nonEmpty)).getOrElse(Array.empty[String])
+     | 
+     |     val redInRaw = if (cliArgs.length >= 1) cliArgs(0) else defaultRed
+     |     val nirInRaw = if (cliArgs.length >= 2) cliArgs(1) else defaultNir
+     |     val outRaw   = if (cliArgs.length >= 3) cliArgs(2) else defaultOut
+     | 
+     |     // Normalize paths based on Spark mode and presence of URI scheme
+     |     val redIn = normalizePath(redInRaw, sc)
+     |     val nirIn = normalizePath(nirInRaw, sc)
+     |     var outPath = normalizePath(outRaw, sc)
+     | 
+     |     // Prepare output path (treat as directory; create if missing; handle 
+ file-exists case)
+     |     outPath = prepareOutputPath(outPath, sc)
+     | 
+     |     // Load rasters and upcast to Float for NDVI computation
+     |     val redF: RasterRDD[Float] = loadAsFloat(sc, redIn)
+     |     val nirF: RasterRDD[Float] = loadAsFloat(sc, nirIn)
+     | 
+     |     // Overlay requires aligned rasters (same metadata). It will fail if  
+not aligned.
+     |     val stacked: RasterRDD[Array[Float]] = redF.overlay(nirF)
+     | 
+     |     // NDVI = (NIR - RED) / (NIR + RED); write -9999.0f when denominator  
+is zero
+     |     val ndvi: RasterRDD[Float] = stacked.mapPixels((px: Array[Float]) =>  
+{
+     |       val red = px(0)
+     |       val nir = px(1)
+     |       val denom = nir + red
+     |       if (denom == 0.0f) -9999.0f else (nir - red) / denom
+     |     })
+     | 
+     |     // Save as GeoTIFF with LZW compression
+     |     ndvi.saveAsGeoTiff(outPath, GeoTiffWriter.Compression -> TiffConstant 
+s.COMPRESSION_LZW)
+     | 
+     |     println(s"NDVI written to: $outPath")
+     |   }
+     | 
+     |   // ---- Helpers ----
+     | 
+     |   private def loadAsFloat(sc: SparkContext, path: String): RasterRDD[Floa 
+t] = {
+     |     val probe = sc.geoTiff(path)
+     |     probe.first.pixelType match {
+     |       case IntegerType =>
+     |         val r: RasterRDD[Int] = sc.geoTiff[Int](path)
+     |         r.mapPixels((v: Int) => v.toFloat)
+     |       case FloatType =>
+     |         val r: RasterRDD[Float] = sc.geoTiff[Float](path)
+     |         r
+     |       case ArrayType(_, _) =>
+     |         throw new RuntimeException("Multi-band GeoTIFF detected. This ope 
+ration expects single-band rasters (Red and NIR).")
+     |       case other =>
+     |         throw new RuntimeException(s"Unsupported pixel type: $other")
+     |     }
+     |   }
+     | 
+     |   private def hasScheme(p: String): Boolean = {
+     |     try { val u = new URI(p); u.getScheme != null } catch { case _: Throw 
+able => false }
+     |   }
+     | 
+     |   private def looksLikeLocalPath(p: String): Boolean = {
+     |     val winDrive = "^[a-zA-Z]:[\\\\/].*".r
+     |     p.startsWith("/") || winDrive.pattern.matcher(p).matches()
+     |   }
+     | 
+     |   private def normalizePath(p: String, sc: SparkContext): String = {
+     |     val isLocal = Option(sc.master).getOrElse("").toLowerCase.startsWith( 
+"local")
+     |     if (p == null || p.isEmpty) p
+     |     else if (hasScheme(p)) p
+     |     else if (isLocal && looksLikeLocalPath(p)) {
+     |       Paths.get(p).toAbsolutePath.normalize().toUri.toString
+     |     } else {
+     |       // No scheme and not local mode -> let Hadoop resolve against fs.de 
+faultFS
+     |       p
+     |     }
+     |   }
+     | 
+     |   private def prepareOutputPath(out: String, sc: SparkContext): String =  
+{
+     |     val conf = sc.hadoopConfiguration
+     |     val p = new Path(out)
+     |     val fs = p.getFileSystem(conf)
+     |     if (fs.exists(p) && fs.isFile(p)) {
+     |       val alt = out + ".tif"
+     |       val p2 = new Path(alt)
+     |       val fs2 = p2.getFileSystem(conf)
+     |       val parent = p2.getParent
+     |       if (parent != null && !fs2.exists(parent)) fs2.mkdirs(parent)
+     |       alt
+     |     } else {
+     |       // Treat output as a directory; create if missing
+     |       if (!fs.exists(p)) fs.mkdirs(p)
+     |       out
+     |     }
+     |   }
+     | }
+warning: one deprecation; for details, enable `:setting -deprecation' or `:replay -deprecation'
+defined object NDVI_Single
+
+scala> 
+
+scala> // NOTES
+
+scala> // - RDPro APIs used:
+
+scala> //   geoTiff, mapPixels, overlay, saveAsGeoTiff
+
+scala> // - Unsupported operations and why:
+
+scala> //   - Reading NoData values from input bands and setting NoData on outpu 
+t: Not exposed in provided DOC. The code implements the denom==0 guard but canno 
+t replicate GDAL NoData masking or set an output NoData tag.
+
+scala> //   - Explicit alignment checks/warping: DOC provides overlay for aligne 
+d rasters and reshape/reproject APIs, but no metadata field accessors were shown 
+ to implement a pre-check. overlay will fail if inputs are not aligned. If align 
+ment is needed, a prior reshape/reproject step should be added using available A 
+PIs.
+
+scala> // - Assumptions:
+
+scala> //   - Inputs are single-band GeoTIFFs. If multi-band is detected, the co 
+de fails fast.
+
+scala> //   - Both inputs are upcast to Float via mapPixels to ensure consistent 
+ numeric type for NDVI.
+
+scala> //   - Output path is treated as a directory per instructions; it's creat 
+ed if missing. If a file exists at the given path, ".tif" is appended to avoid o 
+verwrite.
+
+scala> //   - Path normalization follows Spark master detection: absolute local  
+paths are converted to file:/// URIs only in local mode; otherwise scheme-less p 
+aths are left unchanged to resolve via Hadoop fs.defaultFS.
+
+scala> 
+
+scala> val _r = NDVI_Single.run(sc)
+
+[Stage 0:>                                                          (0 + 1) / 1]
+
+                                                                                
+Java HotSpot(TM) 64-Bit Server VM warning: CodeCache is full. Compiler has been disabled.
+Java HotSpot(TM) 64-Bit Server VM warning: Try increasing the code cache size using -XX:ReservedCodeCacheSize=
+CodeCache: size=131072Kb used=54139Kb max_used=54211Kb free=76932Kb
+ bounds [0x00000001069d8000, 0x0000000109f08000, 0x000000010e9d8000]
+ total_blobs=15236 nmethods=14284 adapters=859
+ compilation: disabled (not enough contiguous free space left)
+26/02/10 23:30:11 WARN GeoTiffWriter: Output file dose not exist, Create empty file on HDFS: file:/Users/clockorangezoe/Documents/phd_projects/code/geoAI/RDProLLM_doc/output/ndvi_single.v2.tif/temp/30/part-00000-000-30.tif
+26/02/10 23:30:11 WARN GeoTiffWriter: Output file dose not exist, Create empty file on HDFS: file:/Users/clockorangezoe/Documents/phd_projects/code/geoAI/RDProLLM_doc/output/ndvi_single.v2.tif/temp/32/part-00002-000-32.tif
+26/02/10 23:30:11 WARN GeoTiffWriter: Output file dose not exist, Create empty file on HDFS: file:/Users/clockorangezoe/Documents/phd_projects/code/geoAI/RDProLLM_doc/output/ndvi_single.v2.tif/temp/34/part-00004-000-34.tif
+26/02/10 23:30:11 WARN GeoTiffWriter: Output file dose not exist, Create empty file on HDFS: file:/Users/clockorangezoe/Documents/phd_projects/code/geoAI/RDProLLM_doc/output/ndvi_single.v2.tif/temp/35/part-00005-000-35.tif
+26/02/10 23:30:11 WARN GeoTiffWriter: Output file dose not exist, Create empty file on HDFS: file:/Users/clockorangezoe/Documents/phd_projects/code/geoAI/RDProLLM_doc/output/ndvi_single.v2.tif/temp/33/part-00003-000-33.tif
+26/02/10 23:30:11 WARN GeoTiffWriter: Output file dose not exist, Create empty file on HDFS: file:/Users/clockorangezoe/Documents/phd_projects/code/geoAI/RDProLLM_doc/output/ndvi_single.v2.tif/temp/36/part-00006-000-36.tif
+26/02/10 23:30:11 WARN GeoTiffWriter: Output file dose not exist, Create empty file on HDFS: file:/Users/clockorangezoe/Documents/phd_projects/code/geoAI/RDProLLM_doc/output/ndvi_single.v2.tif/temp/31/part-00001-000-31.tif
+26/02/10 23:30:11 WARN GeoTiffWriter: Output file dose not exist, Create empty file on HDFS: file:/Users/clockorangezoe/Documents/phd_projects/code/geoAI/RDProLLM_doc/output/ndvi_single.v2.tif/temp/37/part-00007-000-37.tif
+
+[Stage 6:>                                                         (0 + 8) / 10]
+
+[Stage 6:=======================>                                  (4 + 6) / 10]
+26/02/10 23:30:15 WARN GeoTiffWriter: Output file dose not exist, Create empty file on HDFS: file:/Users/clockorangezoe/Documents/phd_projects/code/geoAI/RDProLLM_doc/output/ndvi_single.v2.tif/temp/39/part-00009-000-39.tif
+26/02/10 23:30:15 WARN GeoTiffWriter: Output file dose not exist, Create empty file on HDFS: file:/Users/clockorangezoe/Documents/phd_projects/code/geoAI/RDProLLM_doc/output/ndvi_single.v2.tif/temp/38/part-00008-000-38.tif
+
+[Stage 6:========================================>                 (7 + 3) / 10]
+
+[Stage 6:==============================================>           (8 + 2) / 10]
+
+                                                                                
+NDVI written to: file:///Users/clockorangezoe/Documents/phd_projects/code/geoAI/RDProLLM_doc/output/ndvi_single.v2.tif
+_r: Unit = ()
+
+scala> println("__DONE__ object=NDVI_Single")
+__DONE__ object=NDVI_Single
+
+scala> System.exit(0)
